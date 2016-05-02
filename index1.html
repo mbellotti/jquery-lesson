@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+	$('#panel-choice-1').click(function(){
+		$('#panel2').show();
+		$('#panel3').hide();
+	});
+	
+	$('#panel-choice-2').click(function(){
+		$('#panel3').show();
+		$('#panel2').hide();
+	});
+});
+</script>
+
+<style>
+div{
+	border: 1px solid #000;
+	padding: 20px;
+	width: 40%;
+	margin: 15px;
+}
+</style>
+</head>
+<body>
+	<div id="panel1">
+		I'm a panel
+		<button id="panel-choice-1">Choice 1</button>
+		<button id="panel-choice-2">Choice 2</button>
+		
+		<div id="panel2" style="display:none;">
+			You choose one!
+		</div>
+		
+		<div id="panel3" style="display:none;">
+			You choose two!
+		</div>
+	</div>
+</body>
+</html>

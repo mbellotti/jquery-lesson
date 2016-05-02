@@ -1,0 +1,59 @@
+<html>
+<head>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+	var panels = {
+		'panel-choice-1': {'level':'.decision1','open':'#panel2'},
+		'panel-choice-2': {'level':'.decision1','open':'#panel3'},
+		'panel-choice-3': {'level':'.decision2','open':'#panel4'},
+		'panel-choice-4': {'level':'.decision2','open':'#panel5'},
+	}
+	$('.decision-button').click(function(){
+		var choice = this.id;
+		$(panels[choice]['level']).hide();
+		$(panels[choice]['open']).show();
+	});
+});
+</script>
+
+<style>
+div{
+	border: 1px solid #000;
+	padding: 20px;
+	width: 40%;
+	margin: 15px;
+}
+</style>
+</head>
+<body>
+	<div>
+		I'm a panel
+		<button id="panel-choice-1" class="decision-button">Choice 1</button>
+		<button id="panel-choice-2" class="decision-button">Choice 2</button>
+		
+		<div id="panel2" class="decision1" style="display:none;">
+			You choose one!
+		</div>
+		
+		<div id="panel3" class="decision1" style="display:none;">
+			You choose two!
+		</div>
+	</div>
+	
+	<div>
+		How much wood can a woodchuck chuck?
+		<button id="panel-choice-3" class="decision-button">A bunch</button>
+		<button id="panel-choice-4" class="decision-button">Not much</button>
+		
+		<div id="panel4" class="decision2" style="display:none;">
+			A bunch! A bunch! A bunch!
+		</div>
+		
+		<div id="panel5" class="decision2" style="display:none;">
+			Not much at all
+		</div>
+	</div>
+</body>
+</html>
